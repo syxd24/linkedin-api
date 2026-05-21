@@ -1,0 +1,22 @@
+﻿# Java / Spring Boot
+backend/target/
+backend/data/
+*.class
+
+# React / Vite
+frontend/node_modules/
+frontend/dist/
+
+# Environment files
+.env
+*.env
+application-secret.properties
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
