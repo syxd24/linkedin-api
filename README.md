@@ -59,6 +59,29 @@ SPRING_H2_CONSOLE_ENABLED=false
 
 The backend runs locally on port `15150` by default and uses the cloud provider `PORT` value when it is available. To enable the H2 console locally, set `SPRING_H2_CONSOLE_ENABLED=true` before starting the backend.
 
+Backend Docker deployment on Render:
+
+```text
+Root Directory: backend
+Environment: Docker
+Dockerfile path: Dockerfile
+```
+
+If Render is configured with the repository root as the root directory instead, use:
+
+```text
+Dockerfile path: backend/Dockerfile
+```
+
+Required backend environment variables for Render Docker deployment:
+
+```text
+AI_PYTHON_BASE_URL=https://linkedin-generator-api.onrender.com
+AI_PYTHON_GENERATE_PATH=/api/ai/generate-linkedin-post
+SPRING_H2_CONSOLE_ENABLED=false
+FRONTEND_ALLOWED_ORIGINS=http://localhost:5173
+```
+
 Frontend deployment on Vercel:
 
 ```text
