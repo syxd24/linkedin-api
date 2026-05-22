@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:15150'
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:15150'
 const TECHNICAL_ERROR_PATTERN = /exception|sql|java|spring|stacktrace|trace/i
 
 function isUserFriendlyMessage(message) {

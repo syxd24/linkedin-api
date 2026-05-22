@@ -38,6 +38,43 @@ To create a production build:
 npm run build
 ```
 
+## Deployment
+
+Backend deployment on Render or Railway:
+
+```bash
+cd backend
+./mvnw clean package -DskipTests
+java -Dserver.port=$PORT -jar target/linkedin-content-backend-0.0.1-SNAPSHOT.jar
+```
+
+Backend environment variables:
+
+```text
+AI_PYTHON_BASE_URL=https://linkedin-generator-api.onrender.com
+AI_PYTHON_GENERATE_PATH=/api/ai/generate-linkedin-post
+FRONTEND_ALLOWED_ORIGINS=https://your-frontend.vercel.app,http://localhost:5173
+SPRING_H2_CONSOLE_ENABLED=false
+```
+
+The backend runs locally on port `15150` by default and uses the cloud provider `PORT` value when it is available. To enable the H2 console locally, set `SPRING_H2_CONSOLE_ENABLED=true` before starting the backend.
+
+Frontend deployment on Vercel:
+
+```text
+Root directory: frontend
+Build command: npm run build
+Output directory: dist
+```
+
+Set this Vercel environment variable to the deployed backend URL:
+
+```text
+VITE_API_BASE_URL=https://your-backend-url
+```
+
+The `/python-api` folder is included only as source-code reference for the thesis. It is already deployed separately on Render and is not deployed from this repository.
+
 ## Python AI API Note
 
 The `/python-api` folder contains the external FastAPI AI service source code for documentation and thesis review purposes. The service is already deployed separately on Render, and the Java backend calls the deployed Python AI API URL during normal MVP usage.
