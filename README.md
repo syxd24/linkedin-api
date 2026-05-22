@@ -8,6 +8,7 @@ This repository contains the MVP implementation for a VMU Bachelor thesis projec
 - Frontend: React, Vite, JavaScript, CSS
 - Database: configured in the Spring Boot backend
 - AI integration: backend calls a Python AI API for content generation
+- Python AI API source: included in `/python-api` for documentation and thesis source-code reference
 
 ## Backend Setup
 
@@ -39,7 +40,7 @@ npm run build
 
 ## Python AI API Note
 
-The backend expects a Python AI API service to be available for generating LinkedIn post draft content. Start and configure the Python AI API according to the local thesis/demo environment before using generation features.
+The `/python-api` folder contains the external FastAPI AI service source code for documentation and thesis review purposes. The service is already deployed separately on Render, and the Java backend calls the deployed Python AI API URL during normal MVP usage.
 
 ## MVP Scope
 
@@ -48,3 +49,4 @@ This app generates LinkedIn post drafts only. It does not publish, schedule, ana
 ## Dummy Login
 
 The login screen is frontend-only demo login for MVP purposes.
+
